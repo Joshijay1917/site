@@ -214,8 +214,8 @@ async function playsong(song, pause = false) {
     let a = await fetch(`/site/Songs/${currentfolder}/` + song + ".mp3")
     console.log("a=" + a);
     
-    let b = await b.text();
-    console.log("b=" + b);
+    // let b = await b.text();
+    // console.log("b=" + b);
     
     
     // let audio = new Audio("/Songs/" + song);
