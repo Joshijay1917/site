@@ -207,22 +207,19 @@ async function main() {
         }
     })
 
+    currentsong.addEventListener("loadstart", ()=>{
+        console.log("loading");
+    })
+
+    currentsong.addEventListener("canplaythrough", ()=>{
+        console.log("done");
+    })
+
 }
 
 async function playsong(song, pause = false) {
     console.log("call");
-    let a = await fetch(`/site/Songs/${currentfolder}/` + song + ".mp3")
-    for (const element of a) {
-        console.log(element);
-    }
-    
-    // let b = await b.text();
-    // console.log("b=" + b);
-    
-    
-    // let audio = new Audio("/Songs/" + song);
     currentsong.src = `/site/Songs/${currentfolder}/` + song + ".mp3";
-    console.log("done");
     
     if (pause) {
         currentsong.play();
