@@ -211,15 +211,17 @@ async function main() {
 
 async function playsong(song, pause = false) {
     console.log("call");
-    let a = await fetch(`/site/Songs/${currentfolder}/` + song + ".mp3")
-    console.log("a=" + a);
+    // let a = await fetch(`/site/Songs/${currentfolder}/` + song + ".mp3")
+    // console.log("a=" + a);
     
     // let b = await b.text();
     // console.log("b=" + b);
     
     
     // let audio = new Audio("/Songs/" + song);
-    currentsong.src = `/site/Songs/${currentfolder}/` + song + ".mp3";
+    currentsong.src = await fetch(`/site/Songs/${currentfolder}/` + song + ".mp3");
+    console.log("done");
+    
     if (pause) {
         currentsong.play();
         play.src = "img/pause.svg"
