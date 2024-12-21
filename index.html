@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,11 +10,14 @@
     <link rel="stylesheet" href="css/Utilites.css">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
+
 <body>
     <div class="container flex bg-black">
         <div class="left">
             <div class="home bg-gray rounded m-1 p-1">
-                <div class="logo"><img class="invert" src="img/logo.svg" alt="logo"><h1>Spotify</h1><img src="img/close.svg" alt="" class="close invert"></div>
+                <div class="logo"><img class="invert" src="img/logo.svg" alt="logo">
+                    <h1>Spotify</h1><img src="img/close.svg" alt="" class="close invert">
+                </div>
                 <ul>
                     <li><img class="invert" src="img/home.svg" alt="home">Home</li>
                     <li><img class="invert" src="img/search.svg" alt="home">Search</li>
@@ -29,13 +33,23 @@
                 </div>
                 <div class="songlist">
                     <ul>
-                        
+                        <li> <img src="img/music.svg" alt="">
+                            <div class="info">
+                                <div>Namo Namo Shankara Lyrics (Kedarnath)</div>
+                                <div>Jay</div>
+                            </div>
+                            <div class="playnow">
+                                <span>Play now</span>
+                                <img class="invert" src="img/play.svg" alt="">
+                            </div>
+                        </li>
                     </ul>
                 </div>
                 <div class="footer">
                     <div><a href="https://www.spotify.com/jp/legal/"><span>Legal</span></a></div>
                     <div><a href="https://www.spotify.com/jp/privacy/"><span>Privacy Center</span></a></div>
-                    <div><a href="https://www.spotify.com/jp/legal/privacy-policy/"><span>Privacy Policy</span></a></div>
+                    <div><a href="https://www.spotify.com/jp/legal/privacy-policy/"><span>Privacy Policy</span></a>
+                    </div>
                     <div><a href="https://www.spotify.com/jp/legal/cookies-policy/"><span>Cookies</span></a></div>
                     <div><a href="https://www.spotify.com/jp/legal/privacy-policy/#s3"><span>About Ads</span></a></div>
                     <div><a href="https://www.spotify.com/jp/accessibility/"><span>Accessibility</span></a></div>
@@ -46,50 +60,69 @@
             <div class="header">
                 <div class="nav">
                     <img class="side-bar invert" src="img/side-bar.svg" alt="">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxj3-BiBj-P6L-vVj-4Y3isXpoizqBKh-N2w&s" alt="">
-                    <img src="data:image/png;base64,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" alt="">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxj3-BiBj-P6L-vVj-4Y3isXpoizqBKh-N2w&s"
+                        alt="">
+                    <img src="data:image/png;base64,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"
+                        alt="">
                 </div>
                 <div class="buttons">
                     <button class="signupbtn">Signup</button>
                     <button class="loginbtn">Log in</button>
                 </div>
-        </div>
-        <div class="spotify-playlists">
-            <h1>Spotify Playlists</h1>
-            <div class="cardcontainer">
-                <div data-folder="" class="card">
-                    <div class="play">
-                        <img class="invert" src="img/play.svg" alt="">
-                    </div>
-                    <img src="/site/Songs/cs/cover.jpg" alt="">
-                    <h2>Copyright Songs</h2>
-                    <p>All Songs For You</p>
-                </div>
             </div>
-            <div class="playbar">
-                <div class="seekbar">
-                    <div class="circle"></div>
-                </div>
-                <div class="abovebar">
-                    <div class="songinfo"></div>
-                    <div class="songbuttons">
-                        <img id="previous" src="img/previous.svg" alt="">
-                        <img id="play" src="img/play.svg" alt="">
-                        <img id="next" src="img/next.svg" alt="">
+            <div class="spotify-playlists">
+                <h1>Spotify Playlists</h1>
+                <div class="cardcontainer">
+                    <div data-folder="" class="card">
+                        <div class="play">
+                            <img class="invert" src="img/play.svg" alt="">
+                        </div>
+                        <img src="/site/Songs/cs/cover.jpg" alt="">
+                        <h2>Copyright Songs</h2>
+                        <p>All Songs For You</p>
                     </div>
-                    <div class="timeinfo">
-                        <div class="songtime"></div>
-                        <div class="volume">
-                            <img src="img/volume.svg" alt="">
-                            <div class="range">
-                                <input type="range">
+                    <div data-folder="" class="card">
+                        <div class="play">
+                            <img class="invert" src="img/play.svg" alt="">
+                        </div>
+                        <img src="/site/Songs/ncs/cover.jpg" alt="">
+                        <h2>Non Copyright Songs</h2>
+                        <p>All Songs For You</p>
+                    </div>
+                    <div data-folder="" class="card">
+                        <div class="play">
+                            <img class="invert" src="img/play.svg" alt="">
+                        </div>
+                        <img src="/site/Songs/Other%20Songs/cover.jpg" alt="">
+                        <h2>Other Songs</h2>
+                        <p>All Songs For You</p>
+                    </div>
+                </div>
+                <div class="playbar">
+                    <div class="seekbar">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="abovebar">
+                        <div class="songinfo"></div>
+                        <div class="songbuttons">
+                            <img id="previous" src="img/previous.svg" alt="">
+                            <img id="play" src="img/play.svg" alt="">
+                            <img id="next" src="img/next.svg" alt="">
+                        </div>
+                        <div class="timeinfo">
+                            <div class="songtime"></div>
+                            <div class="volume">
+                                <img src="img/volume.svg" alt="">
+                                <div class="range">
+                                    <input type="range">
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <script src="js/script.js"></script>
+        <script src="js/script.js"></script>
 </body>
+
 </html>
