@@ -56,8 +56,9 @@ async function main() {
                         </li>`
         lis = document.querySelector(".songlist").getElementsByTagName("li")
         Array.from(lis).forEach(e=>{
-            e.addEventListener("click", (e)=>{
-                playsong(e.currentTarget.querySelector(".info > div").innerHTML)
+            e.addEventListener("click", async(e)=>{
+                let a = await playsong(e.currentTarget.querySelector(".info > div").innerHTML)
+                console.log(a);
             })
         })
         currentfolder = "cs"
@@ -77,8 +78,9 @@ async function main() {
                         </li>`
         lis = document.querySelector(".songlist").getElementsByTagName("li")
         Array.from(lis).forEach(e=>{
-            e.addEventListener("click", (e)=>{
-                playsong(e.currentTarget.querySelector(".info > div").innerHTML)
+            e.addEventListener("click", async(e)=>{
+                let a = playsong(e.currentTarget.querySelector(".info > div").innerHTML)
+                console.log(a);
             })
         })
         currentfolder = "Other%20Songs"
@@ -209,7 +211,7 @@ async function main() {
 
 }
 
-function playsong(song, pause = false) {
+async function playsong(song, pause = false) {
     console.log("call");
     
     // let audio = new Audio("/Songs/" + song);
