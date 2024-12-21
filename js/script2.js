@@ -14,7 +14,7 @@ async function main() {
         }
     })
 
-    document.querySelector(".cs"), addEventListener("click", () => {
+    document.querySelector(".cs").addEventListener("click", () => {
         let list = document.querySelector(".songlist").getElementsByTagName("ul")[0];
         list.innerHTML = `<li> <img src="img/music.svg" alt="">
                             <div class="info">
@@ -38,7 +38,7 @@ async function main() {
                         </li>`
     })
 
-    document.querySelector(".other"), addEventListener("click", () => {
+    document.querySelector(".other").addEventListener("click", () => {
         let list = document.querySelector(".songlist").getElementsByTagName("ul")[0];
         list.innerHTML = `<li> <img src="img/music.svg" alt="">
                             <div class="info">
@@ -52,7 +52,7 @@ async function main() {
                         </li>`
     })
 
-    document.querySelector(".ncs"), addEventListener("click", () => {
+    document.querySelector(".ncs").addEventListener("click", () => {
         let list = document.querySelector(".songlist").getElementsByTagName("ul")[0];
         list.innerHTML = `<li> <img src="img/music.svg" alt="">
                             <div class="info">
