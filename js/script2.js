@@ -1,5 +1,7 @@
 let currentsong = new Audio();
+let currentfolder = "cs";
 let songs;
+let lis = document.querySelector(".songlist").getElementsByTagName("li")
 
 async function main() {
 
@@ -36,6 +38,13 @@ async function main() {
                                 <img class="invert" src="img/play.svg" alt="">
                             </div>
                         </li>`
+        lis = document.querySelector(".songlist").getElementsByTagName("li")
+        Array.from(lis).forEach(e=>{
+            e.addEventListener("click", (e)=>{
+                playsong(e.currentTarget.querySelector(".info > div").innerHTML)
+            })
+        })
+        currentfolder = "cs"
     })
 
     document.querySelector(".other").addEventListener("click", () => {
@@ -50,6 +59,13 @@ async function main() {
                                 <img class="invert" src="img/play.svg" alt="">
                             </div>
                         </li>`
+        lis = document.querySelector(".songlist").getElementsByTagName("li")
+        Array.from(lis).forEach(e=>{
+            e.addEventListener("click", (e)=>{
+                playsong(e.currentTarget.querySelector(".info > div").innerHTML)
+            })
+        })
+        currentfolder = "Other%20Songs"
     })
 
     document.querySelector(".ncs").addEventListener("click", () => {
@@ -104,8 +120,37 @@ async function main() {
                                 <img class="invert" src="img/play.svg" alt="">
                             </div>
                         </li>`
+        lis = document.querySelector(".songlist").getElementsByTagName("li")
+        Array.from(lis).forEach(e=>{
+            e.addEventListener("click", (e)=>{
+                // console.log(e.currentTarget.querySelector(".info > div").innerHTML)
+                playsong(e.currentTarget.querySelector(".info > div").innerHTML)
+            })
+        })
+        currentfolder = "ncs"
     })
 
+    Array.from(lis).forEach(e=>{
+        e.addEventListener("click", (e)=>{
+            // console.log(e.currentTarget.querySelector(".info > div").innerHTML)
+            playsong(e.currentTarget.querySelector(".info > div").innerHTML)
+        })
+    })
+
+}
+
+function playsong(song, pause = false) {
+    console.log("call");
+    
+    // let audio = new Audio("/Songs/" + song);
+    currentsong.src = `/site/Songs/${currentfolder}/` + song + ".mp3";
+    if (pause) {
+        currentsong.play();
+        play.src = "img/pause.svg"
+    }
+    play.src = "img/play.svg"
+    document.querySelector(".songinfo").innerHTML = decodeURI(song)
+    document.querySelector(".songtime").innerHTML = "00:00:00:00"
 }
 
 main();
