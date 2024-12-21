@@ -66,10 +66,10 @@ async function displayalbums() {
     for (let index = 0; index < array.length; index++) {
         const e = array[index];
 
-        if (e.href.includes("/songs") && !e.href.includes(".htaccess")) { 
+        if (e.href.includes("/songs/") && !e.href.includes(".htaccess")) { 
             let folder = e.href.split("/songs/")[1].replace("/", "")
             console.log(folder);
-            let a = await fetch(`/Video84(spotify)songs/${folder}/info.json`)
+            let a = await fetch(`/Video84(spotify)/songs/${folder}/info.json`)
             let response = await a.json();
             // console.log(response);
             cardcontainer.innerHTML = cardcontainer.innerHTML + `<div data-folder="${folder}" class="card">
