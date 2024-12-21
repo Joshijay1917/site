@@ -1,7 +1,23 @@
+function secondsToMinitesSeconds(seconds) {
+    if (isNaN(seconds) || seconds < 0) {
+        return "00:00";
+    }
+    else {
+        const minutes = Math.floor(seconds / 60);
+        const remainingSeconds = Math.floor(seconds % 60);
+
+        const formattedMinutes = String(minutes).padStart(2, '0');
+        const formattedSeconds = String(remainingSeconds).padStart(2, '0');
+
+        return `${formattedMinutes}:${formattedSeconds}`;
+    }
+}
+
 let currentsong = new Audio();
 let currentfolder = "cs";
 let songs;
 let lis = document.querySelector(".songlist").getElementsByTagName("li")
+document.querySelector(".songinfo").innerHTML = "Namo Namo Shankara Lyrics (Kedarnath)"
 
 async function main() {
 
@@ -135,6 +151,60 @@ async function main() {
             // console.log(e.currentTarget.querySelector(".info > div").innerHTML)
             playsong(e.currentTarget.querySelector(".info > div").innerHTML)
         })
+    })
+
+    currentsong.addEventListener("timeupdate", () => {
+        document.querySelector(".songtime").innerHTML = `${secondsToMinitesSeconds(currentsong.currentTime)}:${secondsToMinitesSeconds(currentsong.duration)}`;
+        document.querySelector(".circle").style.left = (currentsong.currentTime / currentsong.duration) * 100 + "%";
+
+    })
+
+    document.querySelector(".seekbar").addEventListener("click", (e) => {
+        let persent = (e.offsetX / e.target.getBoundingClientRect().width) * 100;
+        document.querySelector(".circle").style.left = persent + "%";
+        currentsong.currentTime = ((currentsong.duration) * persent) / 100;
+    })
+
+    document.querySelector(".side-bar").addEventListener("click", () => {
+        console.log("click");
+        document.querySelector(".left").style.left = 0
+    })
+
+    document.querySelector(".close").addEventListener("click", () => {
+        document.querySelector(".left").style.left = "-100%"
+    })
+
+    previous.addEventListener("click", () => {
+        // console.log(currentsong.src.split("/Songs/")[1]);
+        let index = songs.indexOf(currentsong.src.split(`${currentfolder}/`)[1])
+        if (index > 0) {
+            playsong(songs[index - 1])
+        }
+    })
+
+    next.addEventListener("click", () => {
+        let index = songs.indexOf(currentsong.src.split(`${currentfolder}/`)[1])
+        if (index < (songs.length - 1)) {
+            playsong(songs[index + 1])
+        }
+    })
+
+    document.querySelector(".range").getElementsByTagName("input")[0].addEventListener("change", (e) => {
+        // console.log(e.target.value);
+        currentsong.volume = parseInt(e.target.value) / 100
+    })
+
+    document.querySelector(".volume > img").addEventListener("click", (e) => {
+        if (e.currentTarget.src.includes("img/volume.svg")) {
+            e.currentTarget.src = e.currentTarget.src.replace("img/volume.svg", "img/mute.svg")
+            currentsong.volume = 0
+            document.querySelector(".range").getElementsByTagName("input")[0].value = 0
+        }
+        else {
+            e.currentTarget.src = e.currentTarget.src.replace("img/mute.svg", "img/volume.svg")
+            currentsong.volume = 0.1
+            document.querySelector(".range").getElementsByTagName("input")[0].value = 10
+        }
     })
 
 }
