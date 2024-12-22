@@ -209,10 +209,12 @@ async function main() {
 
     currentsong.addEventListener("loadstart", ()=>{
         console.log("loading");
+        document.querySelector(".blur2").style.display = "block"
     })
 
     currentsong.addEventListener("canplaythrough", ()=>{
         console.log("done");
+        document.querySelector(".blur2").style.display = "none"
     })
 
 }
