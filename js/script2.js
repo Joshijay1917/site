@@ -216,7 +216,7 @@ async function main() {
         document.querySelector(".blur2").style.display = "block"
     })
 
-    currentsong.addEventListener("canplaythrough", ()=>{
+    currentsong.addEventListener("load", ()=>{
         console.log("done");
         document.querySelector(".blur2").style.display = "none"
     })
