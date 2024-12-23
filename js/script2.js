@@ -56,13 +56,13 @@ async function main() {
                             </div>
                         </li>`
         lis = document.querySelector(".songlist").getElementsByTagName("li")
+        currentfolder = "cs"
         playsong(lis[0].querySelector(".info > div").innerHTML)
         Array.from(lis).forEach(e=>{
             e.addEventListener("click", (e)=>{
                 playsong(e.currentTarget.querySelector(".info > div").innerHTML)
             })
         })
-        currentfolder = "cs"
     })
 
     document.querySelector(".other").addEventListener("click", () => {
@@ -78,13 +78,13 @@ async function main() {
                             </div>
                         </li>`
         lis = document.querySelector(".songlist").getElementsByTagName("li")
+        currentfolder = "Other%20Songs"
         playsong(lis[0].querySelector(".info > div").innerHTML)
         Array.from(lis).forEach(e=>{
             e.addEventListener("click", (e)=>{
                 playsong(e.currentTarget.querySelector(".info > div").innerHTML)
             })
         })
-        currentfolder = "Other%20Songs"
     })
 
     document.querySelector(".ncs").addEventListener("click", () => {
@@ -140,6 +140,7 @@ async function main() {
                             </div>
                         </li>`
         lis = document.querySelector(".songlist").getElementsByTagName("li")
+        currentfolder = "ncs"
         playsong(lis[0].querySelector(".info > div").innerHTML)
         Array.from(lis).forEach(e=>{
             e.addEventListener("click", (e)=>{
@@ -147,7 +148,6 @@ async function main() {
                 playsong(e.currentTarget.querySelector(".info > div").innerHTML)
             })
         })
-        currentfolder = "ncs"
     })
 
     Array.from(lis).forEach(e=>{
