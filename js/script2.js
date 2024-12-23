@@ -18,6 +18,7 @@ let currentfolder = "cs";
 let songs;
 let lis = document.querySelector(".songlist").getElementsByTagName("li")
 document.querySelector(".songinfo").innerHTML = "Namo Namo Shankara Lyrics (Kedarnath)"
+playsong("Namo Namo Shankara Lyrics (Kedarnath)")
 
 async function main() {
 
