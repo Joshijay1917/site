@@ -65,6 +65,10 @@ async function main() {
                 currentsong.play();
             })
         })
+        if(currentfolder = "cs"){
+        songs.push("Namo Namo Shankara Lyrics (Kedarnath)")
+        songs.push("Namoh Namoh Lyrical Video Hindi Devotional Song 2018 Daler Mehndi")
+        }
     })
 
     document.querySelector(".other").addEventListener("click", () => {
@@ -89,6 +93,9 @@ async function main() {
                 currentsong.play();
             })
         })
+        if(currentfolder = "Other%20Songs"){
+            songs.push("Deva Deva (LYRICS) - Arijit Singh _ Brahmastra _ Ranbir K, Alia Bhatt _ Amitabh B _ Jonita Gandhi")
+        }
     })
 
     document.querySelector(".ncs").addEventListener("click", () => {
@@ -154,6 +161,13 @@ async function main() {
                 currentsong.play();
             })
         })
+        if(currentfolder = "ncs"){
+            songs.push("1Warriyo - Mortals (feat. Laura Brehm) [NCS Release(MP3_128K)")
+            songs.push("_Background Cinematic Music (NoCopyrightSongs)_160k")
+            songs.push("Jim Yosef - Link [NCS Release](MP3_70K)")
+            songs.push("Kaun Hain Voh - Full Video Baahubali - The Beginning Kailash K Prabhas MM Kreem , Manoj M_128k")
+            songs.push("_Akmasti2 shorts_160k")
+        }
     })
 
     Array.from(lis).forEach(e=>{
@@ -193,6 +207,7 @@ async function main() {
     })
 
     next.addEventListener("click", () => {
+        console.log(currentsong.src);
         let index = songs.indexOf(currentsong.src.split(`${currentfolder}/`)[1])
         if (index < (songs.length - 1)) {
             playsong(songs[index + 1])
