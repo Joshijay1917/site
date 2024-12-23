@@ -58,9 +58,11 @@ async function main() {
         lis = document.querySelector(".songlist").getElementsByTagName("li")
         currentfolder = "cs"
         playsong(lis[0].querySelector(".info > div").innerHTML)
+        currentsong.play();
         Array.from(lis).forEach(e=>{
             e.addEventListener("click", (e)=>{
                 playsong(e.currentTarget.querySelector(".info > div").innerHTML)
+                currentsong.play();
             })
         })
     })
@@ -80,9 +82,11 @@ async function main() {
         lis = document.querySelector(".songlist").getElementsByTagName("li")
         currentfolder = "Other%20Songs"
         playsong(lis[0].querySelector(".info > div").innerHTML)
+        currentsong.play();
         Array.from(lis).forEach(e=>{
             e.addEventListener("click", (e)=>{
                 playsong(e.currentTarget.querySelector(".info > div").innerHTML)
+                currentsong.play();
             })
         })
     })
@@ -142,10 +146,12 @@ async function main() {
         lis = document.querySelector(".songlist").getElementsByTagName("li")
         currentfolder = "ncs"
         playsong(lis[0].querySelector(".info > div").innerHTML)
+        currentsong.play();
         Array.from(lis).forEach(e=>{
             e.addEventListener("click", (e)=>{
                 // console.log(e.currentTarget.querySelector(".info > div").innerHTML)
                 playsong(e.currentTarget.querySelector(".info > div").innerHTML)
+                currentsong.play();
             })
         })
     })
