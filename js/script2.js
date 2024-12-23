@@ -56,6 +56,7 @@ async function main() {
                             </div>
                         </li>`
         lis = document.querySelector(".songlist").getElementsByTagName("li")
+        playsong(lis[0].querySelector(".info > div").innerHTML)
         Array.from(lis).forEach(e=>{
             e.addEventListener("click", (e)=>{
                 playsong(e.currentTarget.querySelector(".info > div").innerHTML)
@@ -77,6 +78,7 @@ async function main() {
                             </div>
                         </li>`
         lis = document.querySelector(".songlist").getElementsByTagName("li")
+        playsong(lis[0].querySelector(".info > div").innerHTML)
         Array.from(lis).forEach(e=>{
             e.addEventListener("click", (e)=>{
                 playsong(e.currentTarget.querySelector(".info > div").innerHTML)
@@ -138,6 +140,7 @@ async function main() {
                             </div>
                         </li>`
         lis = document.querySelector(".songlist").getElementsByTagName("li")
+        playsong(lis[0].querySelector(".info > div").innerHTML)
         Array.from(lis).forEach(e=>{
             e.addEventListener("click", (e)=>{
                 // console.log(e.currentTarget.querySelector(".info > div").innerHTML)
