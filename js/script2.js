@@ -59,6 +59,7 @@ async function main() {
         currentfolder = "cs"
         playsong(lis[0].querySelector(".info > div").innerHTML)
         currentsong.play();
+        play.src = "img/play.svg"
         Array.from(lis).forEach(e=>{
             e.addEventListener("click", (e)=>{
                 playsong(e.currentTarget.querySelector(".info > div").innerHTML)
@@ -87,6 +88,7 @@ async function main() {
         currentfolder = "Other%20Songs"
         playsong(lis[0].querySelector(".info > div").innerHTML)
         currentsong.play();
+        play.src = "img/play.svg"
         Array.from(lis).forEach(e=>{
             e.addEventListener("click", (e)=>{
                 playsong(e.currentTarget.querySelector(".info > div").innerHTML)
@@ -154,6 +156,7 @@ async function main() {
         currentfolder = "ncs"
         playsong(lis[0].querySelector(".info > div").innerHTML)
         currentsong.play();
+        play.src = "img/play.svg"
         Array.from(lis).forEach(e=>{
             e.addEventListener("click", (e)=>{
                 // console.log(e.currentTarget.querySelector(".info > div").innerHTML)
